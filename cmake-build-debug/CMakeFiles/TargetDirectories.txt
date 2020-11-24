@@ -1,0 +1,6 @@
+C:/Users/lilua/Desktop/lessen code/store_system/cmake-build-debug/CMakeFiles/store_system.dir
+C:/Users/lilua/Desktop/lessen code/store_system/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lilua/Desktop/lessen code/store_system/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/lilua/Desktop/lessen code/store_system/cmake-build-debug/modules/interface/CMakeFiles/edit_cache.dir
+C:/Users/lilua/Desktop/lessen code/store_system/cmake-build-debug/modules/interface/CMakeFiles/interface.dir
+C:/Users/lilua/Desktop/lessen code/store_system/cmake-build-debug/modules/interface/CMakeFiles/rebuild_cache.dir
