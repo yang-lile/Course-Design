@@ -18,7 +18,7 @@ class [[maybe_unused]] LengthInterface : virtual BaseInterface {
   [[maybe_unused]] virtual int GetLength();
 
  private:
-  [[maybe_unused]] int length_;
+  int length_;
 
   // 修改长度
   [[maybe_unused]] virtual void SetLength(int length);
