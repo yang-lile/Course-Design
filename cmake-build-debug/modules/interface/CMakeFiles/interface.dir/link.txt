@@ -1,2 +1,0 @@
-C:\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\mingw64\bin\ar.exe qc libinterface.a  CMakeFiles/interface.dir/base_interface.cc.obj CMakeFiles/interface.dir/clean_interface.cc.obj CMakeFiles/interface.dir/display_interface.cc.obj CMakeFiles/interface.dir/empty_interface.cc.obj CMakeFiles/interface.dir/length_interface.cc.obj
-C:\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\mingw64\bin\ranlib.exe libinterface.a
