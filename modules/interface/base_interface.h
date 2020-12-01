@@ -13,7 +13,6 @@ class BaseInterface {
   // 带上析构函数是编码的健壮
   // 不使用接口指针跨级访问是编程规范
   virtual ~BaseInterface() = default;
-  ;
 
   // 提供一个打日志的方法
   virtual void _printLog() const;

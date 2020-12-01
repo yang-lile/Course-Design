@@ -4,10 +4,14 @@
 
 #include "base_interface.h"
 
+#ifdef DEBUG
 #include <iostream>
+#endif
 
 BaseInterface::BaseInterface() { this->_printLog(); }
 
 void BaseInterface::_printLog() const {
+#ifdef DEBUG
   std::cout << typeid(*this).name() << " has been called!" << std::endl;
+#endif
 }

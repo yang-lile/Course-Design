@@ -8,7 +8,7 @@
 #include "base_interface.h"
 
 // 接口类，提供清空数据结构的操作
-class [[maybe_unused]] CleanInterface : virtual BaseInterface {
+class [[maybe_unused]] CleanInterface : virtual public BaseInterface {
  protected:
   CleanInterface();
 

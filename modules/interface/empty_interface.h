@@ -8,7 +8,7 @@
 #include "base_interface.h"
 
 // 接口类，提供判断空的接口
-class [[maybe_unused]] EmptyInterface : virtual BaseInterface {
+class [[maybe_unused]] EmptyInterface : virtual public BaseInterface {
  protected:
   EmptyInterface();
 

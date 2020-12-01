@@ -8,7 +8,7 @@
 #include "base_interface.h"
 
 // 接口类，提供打印操作的接口
-class [[maybe_unused]] DisplayInterface : virtual BaseInterface {
+class [[maybe_unused]] DisplayInterface : virtual public BaseInterface {
  protected:
   DisplayInterface();
 
