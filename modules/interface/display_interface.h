@@ -15,7 +15,7 @@ class [[maybe_unused]] DisplayInterface : virtual public BaseInterface {
   ~DisplayInterface() override = default;
 
   // 打印
-  [[maybe_unused]] virtual void Display() = 0;
+  [[maybe_unused]] virtual void display() = 0;
 };
 
 #endif  // STORE_SYSTEM_DISPLAY_INTERFACE_H

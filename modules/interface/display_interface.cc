@@ -4,4 +4,4 @@
 
 #include "display_interface.h"
 
-DisplayInterface::DisplayInterface() { BaseInterface::_printLog(); }
+DisplayInterface::DisplayInterface() { BaseInterface::printLog(); }

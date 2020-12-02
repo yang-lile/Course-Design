@@ -16,13 +16,13 @@ class LengthInterface : virtual public BaseInterface {
 
   // 获取长度
   // 标记为const，不会改变类的方法
-  [[nodiscard]] virtual int GetLength() const;
+  [[nodiscard]] virtual int getLength() const;
 
   // 修改长度
-  virtual void SetLength(int length);
+  virtual void setLength(int length);
 
  private:
-  void _printLog() const override;
+  void printLog() const override;
   int length_;
 };
 

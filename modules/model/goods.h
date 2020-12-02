@@ -15,6 +15,8 @@ class Goods {
   friend std::istream& operator>>(std::istream&, Goods&);
   friend std::ostream& operator<<(std::ostream&, Goods&);
 
+
+
  private:
   FixedString name_;
   FixedString code_;

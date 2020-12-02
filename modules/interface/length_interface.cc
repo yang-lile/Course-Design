@@ -4,12 +4,11 @@
 
 #include "length_interface.h"
 
-LengthInterface::LengthInterface():length_(0) {
-  BaseInterface::_printLog();
+LengthInterface::LengthInterface():length_(0) { BaseInterface::printLog();
 }
 
-int LengthInterface::GetLength() const { return this->length_;  }
+int LengthInterface::getLength() const { return this->length_;  }
 
-void LengthInterface::SetLength(int length) { this->length_ = length; }
+void LengthInterface::setLength(int length) { this->length_ = length; }
 
-void LengthInterface::_printLog() const { BaseInterface::_printLog(); }
+void LengthInterface::printLog() const { BaseInterface::printLog(); }

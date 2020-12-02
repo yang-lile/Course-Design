@@ -8,9 +8,9 @@
 #include <iostream>
 #endif
 
-BaseInterface::BaseInterface() { this->_printLog(); }
+BaseInterface::BaseInterface() { this->printLog(); }
 
-void BaseInterface::_printLog() const {
+void BaseInterface::printLog() const {
 #ifdef DEBUG
   std::cout << typeid(*this).name() << " has been called!" << std::endl;
 #endif

@@ -15,7 +15,7 @@ class [[maybe_unused]] CleanInterface : virtual public BaseInterface {
   ~CleanInterface() override = default;
 
   // 清空数据结构
-  [[maybe_unused]] virtual void Clean() = 0;
+  [[maybe_unused]] virtual void clean() = 0;
 };
 
 #endif  // STORE_SYSTEM_CLEAN_INTERFACE_H

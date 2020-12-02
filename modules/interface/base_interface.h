@@ -15,7 +15,7 @@ class BaseInterface {
   virtual ~BaseInterface() = default;
 
   // 提供一个打日志的方法
-  virtual void _printLog() const;
+  virtual void printLog() const;
 };
 
 #endif  // STORE_SYSTEM_BASE_INTERFACE_H

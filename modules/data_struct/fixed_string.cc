@@ -10,13 +10,13 @@ FixedString::FixedString() : str_(nullptr), limit_(-1) {}
 
 [[maybe_unused]] FixedString::FixedString(int limit)
     : str_(nullptr), limit_(limit) {
-  FixedString::SetLength(0);
+  FixedString::setLength(0);
 }
 
 [[maybe_unused]] FixedString::FixedString(const FixedString &fixedString)
     : LengthInterface(fixedString)  // 不明其意
 {
-  this->str_ = new char[fixedString.GetLength()]();
+  this->str_ = new char[fixedString.getLength()]();
   strcpy(this->str_, fixedString.str_);
   this->limit_ = fixedString.limit_;
 }
@@ -25,7 +25,7 @@ FixedString::FixedString() : str_(nullptr), limit_(-1) {}
     : str_(nullptr), limit_(-1) {
   // 获取长度并设置长度
   int len = (int)strlen(str) + 1;  // 不能直接把ull和int相加
-  FixedString::SetLength(len);
+  FixedString::setLength(len);
 
   // 拷贝到新的空间
   this->str_ = new char[len];
@@ -65,7 +65,7 @@ std::istream &operator>>(std::istream &input, FixedString &fixedString) {
 
     // 获取长度并设置长度
     int len = (int)s.length() + 1;  // 不能直接把ull和int相加
-    fixedString.SetLength(len);
+    fixedString.setLength(len);
 
     // 拷贝到新的空间
     fixedString.str_ = new char[len];
@@ -79,8 +79,8 @@ std::ostream &operator<<(std::ostream &output, FixedString &fixedString) {
   return output;
 }
 
-void FixedString::SetLength(int length) { LengthInterface::SetLength(length); }
+void FixedString::setLength(int length) { LengthInterface::setLength(length); }
 
-int FixedString::GetLength() const { return LengthInterface::GetLength(); }
+int FixedString::getLength() const { return LengthInterface::getLength(); }
 
-[[maybe_unused]] const char *FixedString::GetString() { return this->str_; }
+[[maybe_unused]] const char *FixedString::getString() { return this->str_; }

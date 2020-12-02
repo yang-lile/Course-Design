@@ -15,10 +15,10 @@ class [[maybe_unused]] EmptyInterface : virtual public BaseInterface {
   ~EmptyInterface() override = default;
 
   // 判断为空
-  [[maybe_unused]] virtual bool IsEmpty() = 0;
+  [[maybe_unused]] virtual bool isEmpty() = 0;
 
   // 判断不为空
-  [[maybe_unused]] virtual bool IsNotEmpty() = 0;
+  [[maybe_unused]] virtual bool isNotEmpty() = 0;
 };
 
 #endif  // STORE_SYSTEM_EMPTY_INTERFACE_H

@@ -4,4 +4,4 @@
 
 #include "clean_interface.h"
 
-CleanInterface::CleanInterface() { BaseInterface::_printLog(); }
+CleanInterface::CleanInterface() { BaseInterface::printLog(); }

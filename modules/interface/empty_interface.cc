@@ -4,4 +4,4 @@
 
 #include "empty_interface.h"
 
-EmptyInterface::EmptyInterface() { BaseInterface::_printLog(); }
+EmptyInterface::EmptyInterface() { BaseInterface::printLog(); }

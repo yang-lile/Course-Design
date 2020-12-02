@@ -12,7 +12,7 @@
 #include "interface/length_interface.h"
 
 // 限定长度的字符串
-class [[maybe_unused]] FixedString : virtual public LengthInterface {
+class FixedString : virtual public LengthInterface {
  public:
   // 默认limit为-1，无限制
   FixedString();
@@ -31,7 +31,7 @@ class [[maybe_unused]] FixedString : virtual public LengthInterface {
   friend std::istream& operator>>(std::istream&, FixedString&);
   friend std::ostream& operator<<(std::ostream&, FixedString&);
 
-  [[maybe_unused]] const char * GetString();
+  [[maybe_unused]] const char * getString();
 
  private:
   // 指向字符串的指针
@@ -41,8 +41,8 @@ class [[maybe_unused]] FixedString : virtual public LengthInterface {
   int limit_;
 
   // 隐藏LengthInterface的方法
-  void SetLength(int length) override;
-  [[nodiscard]] int GetLength() const override;
+  void setLength(int length) override;
+  [[nodiscard]] int getLength() const override;
 };
 
 #endif  // STORE_SYSTEM_FIXED_STRING_H
