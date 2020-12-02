@@ -57,24 +57,16 @@ add_subdirectory(modules/data_struct)
 add_subdirectory(modules/tools)
 add_subdirectory(modules/pages)
 
-aux_source_directory(interface dir_interface)
-aux_source_directory(model dir_model)
-aux_source_directory(data_struct dir_data_struct)
-aux_source_directory(tools dir_tools)
-aux_source_directory(pages dir_pages)
-
 add_executable(store_system
         src/main.cpp
-        ${dir_interface}
-        ${dir_pages}
-        ${dir_data_struct}
         )
 
-target_link_libraries(store_system interface)
-target_link_libraries(store_system model)
+# 链接顺序很重要
 target_link_libraries(store_system data_struct)
+target_link_libraries(store_system model)
 target_link_libraries(store_system tools)
 target_link_libraries(store_system pages)
+target_link_libraries(store_system interface)
 
 # 资源文件拷贝
 file(COPY resource/Admin.txt DESTINATION resource/)
