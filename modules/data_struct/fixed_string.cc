@@ -8,20 +8,20 @@
 
 FixedString::FixedString() : str_(nullptr), limit_(-1) {}
 
-[[maybe_unused]] FixedString::FixedString(int limit)
+FixedString::FixedString(int limit)
     : str_(nullptr), limit_(limit) {
   FixedString::setLength(0);
 }
 
-[[maybe_unused]] FixedString::FixedString(const FixedString &fixedString)
-    : LengthInterface(fixedString)  // 不明其意
-{
-  this->str_ = new char[fixedString.getLength()]();
-  strcpy(this->str_, fixedString.str_);
-  this->limit_ = fixedString.limit_;
-}
+//FixedString::FixedString(const FixedString &fixedString)
+//    : LengthInterface(fixedString)  // 不明其意
+//{
+//  this->str_ = new char[fixedString.getLength()]();
+//  strcpy(this->str_, fixedString.str_);
+//  this->limit_ = fixedString.limit_;
+//}
 
-[[maybe_unused]] FixedString::FixedString(const char *str)
+FixedString::FixedString(const char *str)
     : str_(nullptr), limit_(-1) {
   // 获取长度并设置长度
   int len = (int)strlen(str) + 1;  // 不能直接把ull和int相加
@@ -84,3 +84,7 @@ void FixedString::setLength(int length) { LengthInterface::setLength(length); }
 int FixedString::getLength() const { return LengthInterface::getLength(); }
 
 [[maybe_unused]] const char *FixedString::getString() { return this->str_; }
+
+bool FixedString::operator==(FixedString &fixedString) {
+  return strcmp(fixedString.str_, this->str_) == 0;
+}

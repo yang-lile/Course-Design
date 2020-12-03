@@ -2,15 +2,9 @@
 // Created by lilua on 2020/12/2.
 //
 
-#include "model/administrator.h"
-
-#include <iostream>
-
-#include "tools/file_operations.cc"
+#include "pages/administrator/admin_login.cc"
 
 int main() {
-  Administrator administrator;
-  fileOperations::readAdmin(administrator);
-  std::cout << administrator;
+  adminLogin();
   return 0;
 }

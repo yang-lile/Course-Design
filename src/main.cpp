@@ -1,10 +1,11 @@
+#include "model/output_template.h"
 #include "pages/administrator/admin_login.cc"
 #include "pages/seller/seller_login.cc"
 #include "pages/shopkeeper/shopkeeper_login.cc"
 #include "pages/user_select.cc"
 
 int main() {
-  outputTemplate::welcome();
+  OutputTemplate::welcome(OutputTemplate::welcomeState::MainPage);
   while (true) {
     LoginResult result = userSelect();
     switch (result) {
@@ -18,7 +19,7 @@ int main() {
         sellerLogin();
         break;
       case EXIT:
-        outputTemplate::exit();
+        OutputTemplate::exit();
         return 0;
     }
   }

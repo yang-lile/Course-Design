@@ -18,20 +18,24 @@ class FixedString : virtual public LengthInterface {
   FixedString();
 
   // 给定一个限制上限的字符串
-  [[maybe_unused]] explicit FixedString(int limit);
+  explicit FixedString(int limit);
 
-  [[maybe_unused]] explicit FixedString(const char*);
+  explicit FixedString(const char*);
 
-  [[maybe_unused]] FixedString(const FixedString&);
+//  FixedString(const FixedString&);
 
   // 析构
   ~FixedString() override;
+
+  // 获取字符串
+  [[maybe_unused]] const char* getString();
 
   // 重载输入输出函数
   friend std::istream& operator>>(std::istream&, FixedString&);
   friend std::ostream& operator<<(std::ostream&, FixedString&);
 
-  [[maybe_unused]] const char * getString();
+  // 判断相等
+  bool operator==(FixedString& fixedString);
 
  private:
   // 指向字符串的指针

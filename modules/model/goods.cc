@@ -4,18 +4,18 @@
 
 #include "goods.h"
 
-#include "tools/output_template.cc"
+#include "model/output_template.h"
 
 Goods::Goods() : name_(), code_(10), producer_(), price_(0) {}
 
 std::istream &operator>>(std::istream &input, Goods &goods) {
-  outputTemplate::pleaseInput("goods.name");
+  OutputTemplate::pleaseInput("goods.name");
   input >> goods.name_;
-  outputTemplate::pleaseInput("goods.code", "this need a code length by 10!");
+  OutputTemplate::pleaseInput("goods.code", "this need a code length by 10!");
   input >> goods.code_;
-  outputTemplate::pleaseInput("goods.producer");
+  OutputTemplate::pleaseInput("goods.producer");
   input >> goods.producer_;
-  outputTemplate::pleaseInput("goods.price");
+  OutputTemplate::pleaseInput("goods.price");
   input >> goods.price_;
   return input;
 }
