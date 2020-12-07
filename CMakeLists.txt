@@ -2,18 +2,18 @@
 cmake_minimum_required(VERSION 3.17)
 set(CMAKE_CXX_STANDARD 20)
 
-## FixedString测试的子模块
-#project(fixed_string)
-#
-#add_executable(
-#        fixed_string
-#        src/test/fixed_string_test.cc
-#        modules/data_struct/fixed_string.cc
-#        modules/data_struct/fixed_string.h
-#        ${dir_interface}
-#)
-#
-#target_link_libraries(fixed_string interface)
+# FixedString测试的子模块
+project(fixed_string)
+
+add_executable(
+        fixed_string
+        src/test/fixed_string_test.cc
+        modules/data_struct/fixed_string.cc
+        modules/data_struct/fixed_string.h
+        ${dir_interface}
+)
+
+target_link_libraries(fixed_string interface)
 
 
 ## Goods测试的子模块
@@ -64,10 +64,10 @@ project(store_system)
 
 include_directories(modules)
 
-add_subdirectory(modules/data_struct)
-add_subdirectory(modules/interface)
-add_subdirectory(modules/model)
 add_subdirectory(modules/systems)
+add_subdirectory(modules/model)
+add_subdirectory(modules/interface)
+add_subdirectory(modules/data_struct)
 #add_subdirectory(modules/tools)
 
 add_executable(
@@ -77,10 +77,16 @@ add_executable(
 )
 
 # 链接顺序很重要
-target_link_libraries(store_system model)
-target_link_libraries(store_system data_struct)
-target_link_libraries(store_system systems)
-target_link_libraries(store_system interface)
+target_link_libraries(
+        store_system
+        systems
+        model
+        data_struct
+        interface
+)
+#target_link_libraries(store_system data_struct)
+#target_link_libraries(store_system model)
+#target_link_libraries(store_system systems)
 #target_link_libraries(store_system tools)
 
 # 资源文件拷贝

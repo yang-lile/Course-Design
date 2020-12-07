@@ -79,9 +79,9 @@ std::ostream &operator<<(std::ostream &output, FixedString &fixedString) {
   return output;
 }
 
-void FixedString::setLength(int length) { LengthInterface::setLength(length); }
-
-int FixedString::getLength() const { return LengthInterface::getLength(); }
+//void FixedString::setLength(int length) { LengthInterface::setLength(length); }
+//
+//int FixedString::getLength() const { return LengthInterface::getLength(); }
 
 [[maybe_unused]] const char *FixedString::getString() { return this->str_; }
 

@@ -19,11 +19,11 @@ class UserMessage {
   friend std::ostream& operator<<(std::ostream&, UserMessage&);
 
   // 判断是否相等
-  bool operator==(UserMessage& userMessage);
+  bool operator==(UserMessage& message);
 
 //  UserMessage& operator=(const UserMessage& userMessage);
 
-// private:
+ protected:
   // 账户
   FixedString id_;
   // 密码

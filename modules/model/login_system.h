@@ -7,26 +7,25 @@
 
 #include "user_message.h"
 
-enum loginAim { Admin = 1, Shopkeeper, Seller };
-
 template <typename T>
 class LoginSystem {
  public:
   // 从文件读数据
   explicit LoginSystem(const char *address);
   // 退出系统，保存数据
-  ~LoginSystem();
+  virtual ~LoginSystem() = 0;
 
   // 登录系统
-  void login();
+  virtual bool login();
 
- private:
-  FixedString address_;
-  int length_;
-  UserMessage *head_;
+ protected:
 
   // 核实是否存在账户
-  bool hasAccount(UserMessage userMessage);
+  virtual bool hasAccount(T t) = 0;
+
+  int length_;
+  T *head_;
+  FixedString address_;
 };
 
 #endif  // STORE_SYSTEM_LOGIN_SYSTEM_H

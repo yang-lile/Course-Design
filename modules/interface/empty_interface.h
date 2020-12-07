@@ -5,19 +5,17 @@
 #ifndef STORE_SYSTEM_EMPTY_INTERFACE_H
 #define STORE_SYSTEM_EMPTY_INTERFACE_H
 
-#include "base_interface.h"
+#include "data_struct_interface.h"
 
 // 接口类，提供判断空的接口
-class [[maybe_unused]] EmptyInterface : virtual public BaseInterface {
+class [[maybe_unused]] EmptyInterface : public DataStructInterface {
  protected:
-  EmptyInterface();
-
   ~EmptyInterface() override = default;
 
-  // 判断为空
+  // 判断数据结构里是没有元素的
   [[maybe_unused]] virtual bool isEmpty() = 0;
 
-  // 判断不为空
+  // 判断数据结构里是有元素的
   [[maybe_unused]] virtual bool isNotEmpty() = 0;
 };
 

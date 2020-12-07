@@ -12,7 +12,8 @@
 #include "interface/length_interface.h"
 
 // 限定长度的字符串
-class FixedString : virtual public LengthInterface {
+class FixedString : private LengthInterface  // 接口的实现继承
+{
  public:
   // 默认limit为-1，无限制
   FixedString();
@@ -20,9 +21,10 @@ class FixedString : virtual public LengthInterface {
   // 给定一个限制上限的字符串
   explicit FixedString(int limit);
 
+  // 给定一个字符串来初始化
   explicit FixedString(const char*);
 
-//  FixedString(const FixedString&);
+  //  FixedString(const FixedString&);
 
   // 析构
   ~FixedString() override;
@@ -45,8 +47,8 @@ class FixedString : virtual public LengthInterface {
   int limit_;
 
   // 隐藏LengthInterface的方法
-  void setLength(int length) override;
-  [[nodiscard]] int getLength() const override;
+//  void setLength(int length) override;
+//  [[nodiscard]] int getLength() const override;
 };
 
 #endif  // STORE_SYSTEM_FIXED_STRING_H

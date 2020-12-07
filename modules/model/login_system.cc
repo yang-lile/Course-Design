@@ -8,7 +8,18 @@
 
 #include "output_template.h"
 
-LoginSystem::LoginSystem(const char* address)
+// LoginSystem::~LoginSystem() {
+
+//}
+
+
+
+// void LoginSystem::login() {
+//
+//}
+
+template <typename T>
+LoginSystem<T>::LoginSystem(const char *address)
     : address_(address), length_(0), head_(nullptr) {
   std::ifstream in(this->address_.getString());
 
@@ -26,9 +37,10 @@ LoginSystem::LoginSystem(const char* address)
   in.close();
 }
 
-LoginSystem::~LoginSystem() {
+template <typename T>
+LoginSystem<T>::~LoginSystem() {
+  // 写回原文件
   std::ofstream out(this->address_.getString());
-
   out << this->length_ << std::endl;
   for (int i = 0; i < this->length_; ++i) {
     out << this->head_[i];
@@ -39,14 +51,8 @@ LoginSystem::~LoginSystem() {
   delete[] this->head_;
 }
 
-bool LoginSystem::hasAccount(UserMessage userMessage) {
-  for (int i = 0; i < this->length_; ++i) {
-    if (this->head_[i] == userMessage) return true;
-  }
-  return false;
-}
-
-void LoginSystem::login() {
+template <typename T>
+bool LoginSystem<T>::login() {
   // 登录欢迎
   OutputTemplate::divideLine();
   OutputTemplate::welcome(OutputTemplate::welcomeState::MainPage);
@@ -76,9 +82,18 @@ void LoginSystem::login() {
   if (flag) {
     // 登录
     OutputTemplate::oneSentence("success");
+    return true;
   } else {
     // 报错退出
     OutputTemplate::oneSentence("login fault");
-    return;
+    return false;
   }
+}
+
+template <typename T>
+bool LoginSystem<T>::hasAccount(T t) {
+  for (int i = 0; i < this->length_; ++i) {
+    if (this->head_[i] == t) return true;
+  }
+  return false;
 }

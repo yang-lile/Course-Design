@@ -9,21 +9,21 @@ UserMessage::UserMessage() : id_(), password_() {}
 UserMessage::UserMessage(const FixedString& id, const FixedString& passwd)
     : id_(id), password_(passwd) {}
 
-bool UserMessage::operator==(UserMessage& userMessage) {
-  if (userMessage.id_ == this->id_ && userMessage.password_ == this->password_)
+bool UserMessage::operator==(UserMessage& message) {
+  if (message.id_ == this->id_ && message.password_ == this->password_)
     return true;
   else
     return false;
 }
 
-std::istream& operator>>(std::istream& input, UserMessage& userMessage) {
-  input >> userMessage.id_;
-  input >> userMessage.password_;
+std::istream& operator>>(std::istream& input, UserMessage& message) {
+  input >> message.id_;
+  input >> message.password_;
   return input;
 }
 
-std::ostream& operator<<(std::ostream& output, UserMessage& userMessage) {
-  output << userMessage.id_ << std::endl << userMessage.password_;
+std::ostream& operator<<(std::ostream& output, UserMessage& message) {
+  output << message.id_ << std::endl << message.password_;
   return output;
 }
 
