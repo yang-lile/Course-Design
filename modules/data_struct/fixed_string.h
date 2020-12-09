@@ -11,42 +11,60 @@
 // 用于导入LengthInterface
 #include "interface/length_interface.h"
 
-// 限定长度的字符串
-class FixedString : private LengthInterface  // 接口的实现继承
-{
+/// 限定长度的字符串
+class FixedString : private LengthInterface {
  public:
-  // 默认limit为-1，无限制
+  /// \构造函数
+  /// 默认limit为-1，无限制
   FixedString();
 
-  // 给定一个限制上限的字符串
+  /// \构造函数
+  /// 给定一个限制上限的字符串
+  /// \param limit 字符串长度上限
   explicit FixedString(int limit);
 
-  // 给定一个字符串来初始化
-  explicit FixedString(const char*);
+  /// \构造函数
+  /// 给定一个字符串来初始化
+  /// \param str 字符串
+  explicit FixedString(const char* str);
 
-  // 拷贝构造函数
+  /// \拷贝构造函数
+  /// \param fixedString 传入另一个FixedString
   FixedString(const FixedString& fixedString);
 
-  // 析构
+  /// \析构函数
   ~FixedString() override;
 
-  // 获取字符串
+  /// 获取字符串
+  /// \return 返回这个字符串
   [[maybe_unused]] [[nodiscard]] char* getStr() const;
 
-  // 重载输入输出函数
-  friend std::istream& operator>>(std::istream& in, FixedString& fixedString);
-  friend std::ostream& operator<<(std::ostream& os,
-                                  const FixedString& fixedString);
+  /// 重载输入函数
+  /// \param in 标准输入流
+  /// \param string 输入到自身
+  /// \return 返回输入流本身
+  friend std::istream& operator>>(std::istream& is, FixedString& string);
 
-  // 判断相等
+  /// 输出流函数
+  /// \param os 标准输出流
+  /// \param string 输出自身
+  /// \return 返回输出流本身
+  friend std::ostream& operator<<(std::ostream& os, const FixedString& string);
+
+  /// \重载等于运算符 判断相等
+  /// \param fixedString
+  /// \return 返回是否相等
   bool operator==(FixedString& fixedString);
 
  private:
-  // 指向字符串的指针
+  /// 指向字符串实体的指针
   char* str_;
 
-  // 限制的大小，如果为非-1，则长度最大不超过`limit_`
-  int limit_{};
+  /// 限制的大小，如果为非-1，则长度最大不超过limit_
+  int limit_;
+
+  [[nodiscard]] int getLength() const override;
+  void setLength(int length) override;
 };
 
 #endif  // STORE_SYSTEM_FIXED_STRING_H

@@ -12,7 +12,7 @@ FixedString::FixedString(int limit) : str_(nullptr), limit_(limit) {}
 
 FixedString::FixedString(const char *str) : str_(nullptr), limit_(-1) {
   // 获取长度并设置长度
-  int len = (int)strlen(str) + 1;  // 不能直接把ull和int相加
+  int len = (int)strlen(str) + 1;  // 不能直接把ull和int相加，所以要转义
   FixedString::setLength(len);
 
   // 拷贝到新的空间
@@ -32,11 +32,6 @@ FixedString::FixedString(const FixedString &fixedString)
 
 bool FixedString::operator==(FixedString &fixedString) {
   return strcmp(fixedString.str_, this->str_) == 0;
-}
-
-std::ostream &operator<<(std::ostream &os, const FixedString &fixedString) {
-  os << fixedString.str_;
-  return os;
 }
 
 std::istream &operator>>(std::istream &input, FixedString &fixedString) {
@@ -80,4 +75,11 @@ std::istream &operator>>(std::istream &input, FixedString &fixedString) {
 }
 
 [[maybe_unused]] char *FixedString::getStr() const { return str_; }
+std::ostream &operator<<(std::ostream &os, const FixedString &string) {
+  os << string.str_ << std::endl << string.limit_;
+  return os;
+}
 
+int FixedString::getLength() const { return LengthInterface::getLength(); }
+
+void FixedString::setLength(int length) { LengthInterface::setLength(length); }
