@@ -7,12 +7,17 @@
 
 #include "data_struct_interface.h"
 
+/// 接口类，提供插入元素的接口
 template <typename T>
 class [[maybe_unused]] InsertInterface : public DataStructInterface {
  protected:
   ~InsertInterface() override = default;
 
   // 添加操作，T为数据类型，aim是要插入的位置
+  /// 添加操作
+  /// \param aim 插入的位置
+  /// \param data 插入的元素，使用常引用来传递
+  /// \return 返回该类型的引用以便于链式调用
   [[maybe_unused]] virtual InsertInterface<T>& insert(int aim,const T& data) = 0;
 };
 

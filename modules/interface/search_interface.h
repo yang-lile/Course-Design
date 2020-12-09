@@ -7,12 +7,15 @@
 
 #include "data_struct_interface.h"
 
+/// 接口类，提供搜索元素的接口
 template <typename T>
 class [[maybe_unused]] SearchInterface : public DataStructInterface {
  protected:
   ~SearchInterface() override = default;
 
-  // 查找操作，给定值data去找坐标，找到的值通过返回值返回，返回0表示查找失败
+  /// 查找操作，给定值data去找坐标
+  /// \param data 待查找的值，不修改它，所以传了常引用
+  /// \return 返回人类语言的下标，返回0为没找到
   [[maybe_unused]] virtual int search(const T &data) const = 0;
 };
 

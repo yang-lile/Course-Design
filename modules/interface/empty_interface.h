@@ -7,15 +7,17 @@
 
 #include "data_struct_interface.h"
 
-// 接口类，提供判断空的接口
+/// 接口类，提供判断空的接口
 class [[maybe_unused]] EmptyInterface : public DataStructInterface {
  protected:
   ~EmptyInterface() override = default;
 
-  // 判断数据结构里是没有元素的
+  /// 判断数据结构里是没有元素的
+  /// \return true为空
   [[maybe_unused]] [[nodiscard]] virtual bool isEmpty() const= 0;
 
-  // 判断数据结构里是有元素的
+  /// 判断数据结构里是有元素的
+  /// \return true为有元素，非空
   [[maybe_unused]] [[nodiscard]] virtual bool isNotEmpty() const= 0;
 };
 

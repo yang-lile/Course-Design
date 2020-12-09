@@ -7,12 +7,12 @@
 
 #include "data_struct_interface.h"
 
-// 接口类，提供清空数据结构的操作
+/// 接口类，提供清空数据结构的操作
 class [[maybe_unused]] CleanInterface : public DataStructInterface {
  protected:
   ~CleanInterface() override = default;
 
-  // 清空数据结构内的元素
+  /// 清空数据结构内的元素
   [[maybe_unused]] virtual void clean() = 0;
 };
 

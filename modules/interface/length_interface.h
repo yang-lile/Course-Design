@@ -7,23 +7,20 @@
 
 #include "data_struct_interface.h"
 
-// 接口类，提供长度操作的接口
+/// 接口类，提供长度操作的接口
+/// 其中get和set都是已经实现了的虚函数，可以直接私有继承，直接使用
 class LengthInterface : public DataStructInterface {
  protected:
   LengthInterface();
 
   ~LengthInterface() override = 0;
 
- protected:
-  // 获取长度
-  // 标记为const，不会改变类的方法
   [[nodiscard]] virtual int getLength() const = 0;
 
-  // 修改长度
   virtual void setLength(int length) = 0;
 
  private:
-  // 唯一的长度常量
+  /// 唯一的长度
   int length_;
 };
 

@@ -7,12 +7,12 @@
 
 #include "data_struct_interface.h"
 
-// 接口类，提供打印操作的接口
+/// 接口类，提供打印操作的接口
 class [[maybe_unused]] DisplayInterface : public DataStructInterface {
  protected:
   ~DisplayInterface() override = default;
 
-  // 打印数据结构的所有数据
+  /// 打印数据结构的所有数据
   [[maybe_unused]] virtual void display() const = 0;
 };
 
