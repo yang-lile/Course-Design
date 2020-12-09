@@ -24,17 +24,19 @@ class FixedString : private LengthInterface  // 接口的实现继承
   // 给定一个字符串来初始化
   explicit FixedString(const char*);
 
-  //  FixedString(const FixedString&);
+  // 拷贝构造函数
+  FixedString(const FixedString& fixedString);
 
   // 析构
   ~FixedString() override;
 
   // 获取字符串
-  [[maybe_unused]] const char* getString();
+  [[maybe_unused]] [[nodiscard]] char* getStr() const;
 
   // 重载输入输出函数
-  friend std::istream& operator>>(std::istream&, FixedString&);
-  friend std::ostream& operator<<(std::ostream&, FixedString&);
+  friend std::istream& operator>>(std::istream& in, FixedString& fixedString);
+  friend std::ostream& operator<<(std::ostream& os,
+                                  const FixedString& fixedString);
 
   // 判断相等
   bool operator==(FixedString& fixedString);
@@ -44,11 +46,7 @@ class FixedString : private LengthInterface  // 接口的实现继承
   char* str_;
 
   // 限制的大小，如果为非-1，则长度最大不超过`limit_`
-  int limit_;
-
-  // 隐藏LengthInterface的方法
-//  void setLength(int length) override;
-//  [[nodiscard]] int getLength() const override;
+  int limit_{};
 };
 
 #endif  // STORE_SYSTEM_FIXED_STRING_H

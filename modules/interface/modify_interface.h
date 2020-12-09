@@ -13,7 +13,7 @@ class [[maybe_unused]] ModifyInterface : public DataStructInterface {
   ~ModifyInterface() override = default;
 
   // 修改操作，T为数据类型，aim是要插入的位置
-  [[maybe_unused]] void modify(int aim, T data) = 0;
+  virtual ModifyInterface<T> &modify(int aim,const T& data) = 0;
 };
 
 #endif  // STORE_SYSTEM_MODIFY_INTERFACE_H

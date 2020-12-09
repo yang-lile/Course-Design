@@ -8,21 +8,9 @@
 
 FixedString::FixedString() : str_(nullptr), limit_(-1) {}
 
-FixedString::FixedString(int limit)
-    : str_(nullptr), limit_(limit) {
-  FixedString::setLength(0);
-}
+FixedString::FixedString(int limit) : str_(nullptr), limit_(limit) {}
 
-//FixedString::FixedString(const FixedString &fixedString)
-//    : LengthInterface(fixedString)  // 不明其意
-//{
-//  this->str_ = new char[fixedString.getLength()]();
-//  strcpy(this->str_, fixedString.str_);
-//  this->limit_ = fixedString.limit_;
-//}
-
-FixedString::FixedString(const char *str)
-    : str_(nullptr), limit_(-1) {
+FixedString::FixedString(const char *str) : str_(nullptr), limit_(-1) {
   // 获取长度并设置长度
   int len = (int)strlen(str) + 1;  // 不能直接把ull和int相加
   FixedString::setLength(len);
@@ -33,6 +21,23 @@ FixedString::FixedString(const char *str)
 }
 
 FixedString::~FixedString() { delete[] this->str_; }
+
+FixedString::FixedString(const FixedString &fixedString)
+    // 拷贝构造函数构造父类
+    : LengthInterface(fixedString) {
+  this->limit_ = fixedString.limit_;
+  this->str_ = new char[fixedString.getLength()];
+  strcpy(this->str_, fixedString.str_);
+}
+
+bool FixedString::operator==(FixedString &fixedString) {
+  return strcmp(fixedString.str_, this->str_) == 0;
+}
+
+std::ostream &operator<<(std::ostream &os, const FixedString &fixedString) {
+  os << fixedString.str_;
+  return os;
+}
 
 std::istream &operator>>(std::istream &input, FixedString &fixedString) {
   // 释放原内存
@@ -47,7 +52,7 @@ std::istream &operator>>(std::istream &input, FixedString &fixedString) {
       std::string s;
       std::getline(input, s);
 
-      // 如果满足条件，退出
+      // 如果满足长度相等，退出
       if (fixedString.limit_ == s.length()) {
         strcpy(fixedString.str_, s.c_str());
         break;
@@ -74,17 +79,5 @@ std::istream &operator>>(std::istream &input, FixedString &fixedString) {
   return input;
 }
 
-std::ostream &operator<<(std::ostream &output, FixedString &fixedString) {
-  output << fixedString.str_;
-  return output;
-}
+[[maybe_unused]] char *FixedString::getStr() const { return str_; }
 
-//void FixedString::setLength(int length) { LengthInterface::setLength(length); }
-//
-//int FixedString::getLength() const { return LengthInterface::getLength(); }
-
-[[maybe_unused]] const char *FixedString::getString() { return this->str_; }
-
-bool FixedString::operator==(FixedString &fixedString) {
-  return strcmp(fixedString.str_, this->str_) == 0;
-}

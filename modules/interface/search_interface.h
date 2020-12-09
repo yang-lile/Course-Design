@@ -12,8 +12,8 @@ class [[maybe_unused]] SearchInterface : public DataStructInterface {
  protected:
   ~SearchInterface() override = default;
 
-  // 查找操作，给定值data去找坐标，找到的值通过返回值返回
-  [[maybe_unused]] virtual int search(T data) = 0;
+  // 查找操作，给定值data去找坐标，找到的值通过返回值返回，返回0表示查找失败
+  [[maybe_unused]] virtual int search(const T &data) const = 0;
 };
 
 #endif  // STORE_SYSTEM_SEARCH_INTERFACE_H

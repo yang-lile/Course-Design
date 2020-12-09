@@ -13,7 +13,7 @@ class [[maybe_unused]] DisplayInterface : public DataStructInterface {
   ~DisplayInterface() override = default;
 
   // 打印数据结构的所有数据
-  [[maybe_unused]] virtual void display() = 0;
+  [[maybe_unused]] virtual void display() const = 0;
 };
 
 #endif  // STORE_SYSTEM_DISPLAY_INTERFACE_H

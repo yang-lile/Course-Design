@@ -17,10 +17,10 @@ class LengthInterface : public DataStructInterface {
  protected:
   // 获取长度
   // 标记为const，不会改变类的方法
-  [[maybe_unused]] [[nodiscard]] virtual int getLength() const;
+  [[nodiscard]] virtual int getLength() const = 0;
 
   // 修改长度
-  virtual void setLength(int length);
+  virtual void setLength(int length) = 0;
 
  private:
   // 唯一的长度常量

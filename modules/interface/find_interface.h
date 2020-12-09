@@ -13,7 +13,7 @@ class [[maybe_unused]] FindInterface : public DataStructInterface {
   ~FindInterface() override = default;
 
   // 给定的坐标aim找值，返回不可改变的常量
-  [[maybe_unused]] virtual const T find(int aim) = 0;
+  [[maybe_unused]] virtual bool find(int aim, T& data) const = 0;
 };
 
 #endif  // STORE_SYSTEM_FIND_INTERFACE_H

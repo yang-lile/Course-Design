@@ -2,7 +2,19 @@
 cmake_minimum_required(VERSION 3.17)
 set(CMAKE_CXX_STANDARD 20)
 
-# FixedString测试的子模块
+# LinkList的测试模块
+project(link_list)
+
+add_executable(
+        link_list
+        src/test/link_list_test.cc
+        modules/data_struct/link_list.h
+        ${dir_interface}
+)
+
+target_link_libraries(link_list interface)
+
+# FixedString测试模块
 project(fixed_string)
 
 add_executable(
@@ -14,7 +26,6 @@ add_executable(
 )
 
 target_link_libraries(fixed_string interface)
-
 
 ## Goods测试的子模块
 #project(goods)

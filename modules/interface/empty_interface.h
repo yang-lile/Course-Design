@@ -13,10 +13,10 @@ class [[maybe_unused]] EmptyInterface : public DataStructInterface {
   ~EmptyInterface() override = default;
 
   // 判断数据结构里是没有元素的
-  [[maybe_unused]] virtual bool isEmpty() = 0;
+  [[maybe_unused]] [[nodiscard]] virtual bool isEmpty() const= 0;
 
   // 判断数据结构里是有元素的
-  [[maybe_unused]] virtual bool isNotEmpty() = 0;
+  [[maybe_unused]] [[nodiscard]] virtual bool isNotEmpty() const= 0;
 };
 
 #endif  // STORE_SYSTEM_EMPTY_INTERFACE_H

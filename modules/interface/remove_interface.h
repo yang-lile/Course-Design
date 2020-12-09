@@ -12,8 +12,8 @@ class [[maybe_unused]] RemoveInterface : public DataStructInterface {
  protected:
   ~RemoveInterface() override = default;
 
-  // 删除操作，T为数据类型，aim是要插入的位置
-  [[maybe_unused]] virtual void remove(T data, int aim) = 0;
+  // 删除操作，aim是要删除的位置
+  [[maybe_unused]] virtual RemoveInterface<T>& remove(int aim) = 0;
 };
 
 #endif  // STORE_SYSTEM_REMOVE_INTERFACE_H

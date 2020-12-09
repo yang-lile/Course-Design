@@ -13,7 +13,7 @@ class [[maybe_unused]] InsertInterface : public DataStructInterface {
   ~InsertInterface() override = default;
 
   // 添加操作，T为数据类型，aim是要插入的位置
-  [[maybe_unused]] virtual void insert(T data, int aim) = 0;
+  [[maybe_unused]] virtual InsertInterface<T>& insert(int aim,const T& data) = 0;
 };
 
 #endif  // STORE_SYSTEM_INSERT_INTERFACE_H
