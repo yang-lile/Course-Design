@@ -4,7 +4,7 @@
 
 #include "admin_system.h"
 
-#include <model/output_template.h>
+#include <tools/output_template.h>
 
 #include <fstream>
 AdminSystem::AdminSystem(const char* address) : LoginSystem(address) {}

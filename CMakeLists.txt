@@ -27,6 +27,18 @@ add_executable(
 
 target_link_libraries(fixed_string interface)
 
+# Stack测试模块
+project(stack)
+
+add_executable(
+        stack
+        ${dir_interface}
+        src/test/stack_test.cc
+        ${dir_tools}
+)
+
+target_link_libraries(stack interface tools)
+
 ## Goods测试的子模块
 #project(goods)
 #

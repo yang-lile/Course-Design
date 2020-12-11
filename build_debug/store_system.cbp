@@ -105,6 +105,50 @@
 					<DistClean command="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lilua/Desktop/lessen code/store_system/build_debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="stack">
+				<Option output="C:/Users/lilua/Desktop/lessen code/store_system/build_debug/stack.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/lilua/Desktop/lessen code/store_system/build_debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/lilua/Desktop/lessen code/store_system/modules"/>
+					<Add directory="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lilua/Desktop/lessen code/store_system/build_debug/Makefile&quot;  VERBOSE=1 stack"/>
+					<CompileFile command="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lilua/Desktop/lessen code/store_system/build_debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lilua/Desktop/lessen code/store_system/build_debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lilua/Desktop/lessen code/store_system/build_debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stack/fast">
+				<Option output="C:/Users/lilua/Desktop/lessen code/store_system/build_debug/stack.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/lilua/Desktop/lessen code/store_system/build_debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/lilua/Desktop/lessen code/store_system/modules"/>
+					<Add directory="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lilua/Desktop/lessen code/store_system/build_debug/Makefile&quot;  VERBOSE=1 stack/fast"/>
+					<CompileFile command="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lilua/Desktop/lessen code/store_system/build_debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lilua/Desktop/lessen code/store_system/build_debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lilua/Desktop/lessen code/store_system/build_debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="store_system">
 				<Option output="C:/Users/lilua/Desktop/lessen code/store_system/build_debug/store_system.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/lilua/Desktop/lessen code/store_system/build_debug"/>
@@ -356,9 +400,6 @@
 		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/data_struct/link_list.h">
 			<Option target="link_list"/>
 		</Unit>
-		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/data_struct/link_list.tcc">
-			<Option target="data_struct"/>
-		</Unit>
 		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/interface/clean_interface.h">
 			<Option target="interface"/>
 		</Unit>
@@ -383,7 +424,7 @@
 		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/interface/length_interface.h">
 			<Option target="interface"/>
 		</Unit>
-		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/interface/list_interface.h">
+		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/interface/linear_list_interface.h">
 			<Option target="interface"/>
 		</Unit>
 		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/interface/modify_interface.h">
@@ -393,6 +434,12 @@
 			<Option target="interface"/>
 		</Unit>
 		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/interface/search_interface.h">
+			<Option target="interface"/>
+		</Unit>
+		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/interface/stack_interface.cc">
+			<Option target="interface"/>
+		</Unit>
+		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/interface/stack_interface.h">
 			<Option target="interface"/>
 		</Unit>
 		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/model/admin_message.cc">
@@ -431,12 +478,6 @@
 		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/model/login_system.h">
 			<Option target="model"/>
 		</Unit>
-		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/model/output_template.cc">
-			<Option target="model"/>
-		</Unit>
-		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/model/output_template.h">
-			<Option target="model"/>
-		</Unit>
 		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/modules/model/user_message.cc">
 			<Option target="model"/>
 		</Unit>
@@ -463,6 +504,9 @@
 		</Unit>
 		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/src/test/link_list_test.cc">
 			<Option target="link_list"/>
+		</Unit>
+		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/src/test/stack_test.cc">
+			<Option target="stack"/>
 		</Unit>
 		<Unit filename="C:/Users/lilua/Desktop/lessen code/store_system/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

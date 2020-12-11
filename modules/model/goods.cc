@@ -4,7 +4,7 @@
 
 #include "goods.h"
 
-#include "model/output_template.h"
+#include "tools/output_template.h"
 
 Goods::Goods() : name_(), code_(10), producer_(), price_(0) {}
 

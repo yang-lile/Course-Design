@@ -14,4 +14,4 @@ add_library(
         modify_interface.h
         search_interface.h
         find_interface.h
-        list_interface.h)
+        linear_list_interface.h stack_interface.cc stack_interface.h)

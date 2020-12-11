@@ -4,18 +4,14 @@
 
 #include "data_struct/link_list.h"
 #include <iostream>
-#include <algorithm>
-#include <vector>
 using namespace std;
 
 int main() {
-  auto *list=new LinkList<int>();
-//  search(,);
-  vector<int> s;
-
+  auto list=LinkList<int>();
   cout << "print l" << endl;
-  list->display();
+  list.insert(0,1);
+  list.display();
   int v = 3;
-  list->insert(0, v);
+  list.insert(0, v);
   return 0;
 }
