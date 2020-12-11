@@ -1,8 +1,7 @@
-#include "pages/administrator/admin_login.cc"
-#include "pages/seller/seller_login.cc"
-#include "pages/shopkeeper/shopkeeper_login.cc"
-#include "pages/user_select.cc"
-#include "tools/output_template.h"
+#include "systems/administrator/admin_login.cc"
+#include "systems/seller/seller_login.cc"
+#include "systems/shopkeeper/shopkeeper_login.cc"
+#include "systems/user_select.cc"
 
 int main() {
   OutputTemplate::welcome(OutputTemplate::welcomeState::MainPage);

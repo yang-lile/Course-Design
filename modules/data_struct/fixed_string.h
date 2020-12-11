@@ -63,8 +63,8 @@ class FixedString : private LengthInterface {
   /// 限制的大小，如果为非-1，则长度最大不超过limit_
   int limit_;
 
-  [[nodiscard]] int getLength() const override;
-  void setLength(int length) override;
+  [[nodiscard]] unsigned getLength() const override;
+  void setLength(unsigned length) override;
 };
 
 #endif  // STORE_SYSTEM_FIXED_STRING_H

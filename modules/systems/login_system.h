@@ -2,26 +2,41 @@
 // Created by lilua on 2020/12/2.
 //
 
-#include "login_system.h"
+#ifndef STORE_SYSTEM_LOGIN_SYSTEM_H
+#define STORE_SYSTEM_LOGIN_SYSTEM_H
+
+#include <tools/output_template.h>
 
 #include <fstream>
 
-#include "tools/output_template.h"
+#include "model/user_message.h"
 
-// LoginSystem::~LoginSystem() {
+template <typename T>
+class LoginSystem {
+ public:
+  // 从文件读数据
+  explicit LoginSystem(const char *address);
+  // 退出系统，保存数据
+  virtual ~LoginSystem() = 0;
 
-//}
+  // 登录系统
+  [[maybe_unused]] virtual bool login();
 
+ protected:
 
+  // 核实是否存在账户
+  virtual bool hasAccount(T t) = 0;
 
-// void LoginSystem::login() {
-//
-//}
+  int length_;
+  T *head_;
+  FixedString address_;
+};
+
 
 template <typename T>
 LoginSystem<T>::LoginSystem(const char *address)
     : address_(address), length_(0), head_(nullptr) {
-  std::ifstream in(this->address_.getString());
+  std::ifstream in(this->address_.getStr());
 
   // 读取账户数
   in >> this->length_;
@@ -40,7 +55,7 @@ LoginSystem<T>::LoginSystem(const char *address)
 template <typename T>
 LoginSystem<T>::~LoginSystem() {
   // 写回原文件
-  std::ofstream out(this->address_.getString());
+  std::ofstream out(this->address_.getStr());
   out << this->length_ << std::endl;
   for (int i = 0; i < this->length_; ++i) {
     out << this->head_[i];
@@ -52,7 +67,7 @@ LoginSystem<T>::~LoginSystem() {
 }
 
 template <typename T>
-bool LoginSystem<T>::login() {
+[[maybe_unused]] bool LoginSystem<T>::login() {
   // 登录欢迎
   OutputTemplate::divideLine();
   OutputTemplate::welcome(OutputTemplate::welcomeState::MainPage);
@@ -97,3 +112,5 @@ bool LoginSystem<T>::hasAccount(T t) {
   }
   return false;
 }
+
+#endif  // STORE_SYSTEM_LOGIN_SYSTEM_H

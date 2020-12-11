@@ -80,6 +80,6 @@ std::ostream &operator<<(std::ostream &os, const FixedString &string) {
   return os;
 }
 
-int FixedString::getLength() const { return LengthInterface::getLength(); }
+unsigned FixedString::getLength() const { return LengthInterface::getLength(); }
 
-void FixedString::setLength(int length) { LengthInterface::setLength(length); }
+void FixedString::setLength(unsigned length) { LengthInterface::setLength(length); }

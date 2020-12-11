@@ -4,13 +4,12 @@
 
 #include "admin_system.h"
 
-#include <tools/output_template.h>
-
 #include <fstream>
+
 AdminSystem::AdminSystem(const char* address) : LoginSystem(address) {}
 AdminSystem::~AdminSystem() {
   // 写回原文件
-  std::ofstream out(this->address_.getString());
+  std::ofstream out(this->address_.getStr());
   out << this->length_ << std::endl;
   for (int i = 0; i < this->length_; ++i) {
     out << this->head_[i];

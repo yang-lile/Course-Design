@@ -9,5 +9,6 @@ add_library(
         ${dir_system_seller}
         ${dir_system_shopkeeper}
         ${dir_systems}
+        login_system.h
 )
-target_link_libraries(systems model data_struct interface)
+target_link_libraries(systems data_struct interface model tools)

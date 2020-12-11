@@ -5,8 +5,8 @@
 #ifndef STORE_SYSTEM_ADMIN_SYSTEM_H
 #define STORE_SYSTEM_ADMIN_SYSTEM_H
 
-#include "admin_message.h"
-#include "login_system.h"
+#include "model/admin_message.h"
+#include "systems/login_system.h"
 /*
  * 私有继承
  * 为了只包含功能，但是和原类不是一个作用

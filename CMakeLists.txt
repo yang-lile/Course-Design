@@ -88,24 +88,25 @@ project(store_system)
 include_directories(modules)
 
 add_subdirectory(modules/systems)
-add_subdirectory(modules/model)
 add_subdirectory(modules/interface)
 add_subdirectory(modules/data_struct)
-#add_subdirectory(modules/tools)
+add_subdirectory(modules/model)
+add_subdirectory(modules/tools)
 
 add_executable(
         store_system
-        #        src/main.cpp
-        src/test/administrator_test.cc
+        src/main.cpp
+#                src/test/administrator_test.cc
 )
 
 # 链接顺序很重要
 target_link_libraries(
         store_system
-        systems
         model
         data_struct
         interface
+        tools
+        systems
 )
 #target_link_libraries(store_system data_struct)
 #target_link_libraries(store_system model)

@@ -10,9 +10,8 @@
 #include "interface/linear_list_interface.h"
 
 template <typename T>
-class LinkList :
-    // 接口继承
-    private LinearListInterface<T, LinkList> {
+class LinkList : private LinearListInterface<T, LinkList>  // 接口继承
+{
  public:
   LinkList();
   ~LinkList() override;
@@ -166,7 +165,7 @@ LinkList<T> &LinkList<T>::insert(int aim, const T &data) {
   // 然后使p的下一个节点赋值为node的地址
   p->next_ = node;
   // 修改元素个数
-  this->setLength(this->getLength()+1);
+  this->setLength(this->getLength() + 1);
   return *this;
 }
 /// 链表的修改函数，传入要位置，修改成什么
@@ -223,7 +222,7 @@ LinkList<T> &LinkList<T>::remove(int aim) {
   // 释放rm内存
   delete rm;
   // 减少自身元素个数
-  this->setLength(this->getLength()-1);
+  this->setLength(this->getLength() - 1);
   return *this;
 }
 /// 查找操作，给定值data去找坐标
