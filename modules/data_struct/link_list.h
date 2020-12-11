@@ -12,7 +12,7 @@
 template <typename T>
 class LinkList :
     // 接口继承
-    private LinearListInterface<T> {
+    private LinearListInterface<T, LinkList> {
  public:
   LinkList();
   ~LinkList() override;
@@ -21,12 +21,12 @@ class LinkList :
   void clean() override;
   void display() const override;
   bool find(int aim, T &data) const override;
-  InsertInterface<T> &insert(int aim, const T &data) override;
-  ModifyInterface<T> &modify(int aim, const T &data) override;
-  RemoveInterface<T> &remove(int aim) override;
+  LinkList<T> &insert(int aim, const T &data) override;
+  LinkList<T> &modify(int aim, const T &data) override;
+  LinkList<T> &remove(int aim) override;
   int search(const T &data) const override;
-  [[nodiscard]] int getLength() const override;
-  void setLength(int length) override;
+  [[nodiscard]] unsigned getLength() const override;
+  void setLength(unsigned length) override;
   [[nodiscard]] bool isEmpty() const override;
   [[nodiscard]] bool isNotEmpty() const override;
 
@@ -143,7 +143,7 @@ bool LinkList<T>::find(int aim, T &data) const {
 /// \param data 要插入的数据的引用
 /// \return 返回插入是否成功
 template <typename T>
-InsertInterface<T> &LinkList<T>::insert(int aim, const T &data) {
+LinkList<T> &LinkList<T>::insert(int aim, const T &data) {
   // 大于长度，或小于0，都返回false
   if (aim > this->getLength() || aim < 0)
     throw std::out_of_range("this is a Exception, maybe index out of range.");
@@ -165,6 +165,8 @@ InsertInterface<T> &LinkList<T>::insert(int aim, const T &data) {
   node->next_ = p->next_;
   // 然后使p的下一个节点赋值为node的地址
   p->next_ = node;
+  // 修改元素个数
+  this->setLength(this->getLength()+1);
   return *this;
 }
 /// 链表的修改函数，传入要位置，修改成什么
@@ -173,7 +175,7 @@ InsertInterface<T> &LinkList<T>::insert(int aim, const T &data) {
 /// \param data 修改值
 /// \return 是否修改成功
 template <typename T>
-ModifyInterface<T> &LinkList<T>::modify(int aim, const T &data) {
+LinkList<T> &LinkList<T>::modify(int aim, const T &data) {
   // 大于长度-1，或小于0，都返回false
   if (aim > this->getLength() - 1 || aim < 0)
     throw std::out_of_range("this is a Exception, maybe index out of range.");
@@ -199,7 +201,7 @@ ModifyInterface<T> &LinkList<T>::modify(int aim, const T &data) {
 /// \param aim 要删除的位置
 /// \return 是否删除成功
 template <typename T>
-RemoveInterface<T> &LinkList<T>::remove(int aim) {
+LinkList<T> &LinkList<T>::remove(int aim) {
   // 大于长度-1，或小于0，都返回false
   if (aim > this->getLength() - 1 || aim < 0)
     throw std::out_of_range("this is a Exception, maybe index out of range.");
@@ -220,6 +222,8 @@ RemoveInterface<T> &LinkList<T>::remove(int aim) {
   p->next_ = p->next_->next_;
   // 释放rm内存
   delete rm;
+  // 减少自身元素个数
+  this->setLength(this->getLength()-1);
   return *this;
 }
 /// 查找操作，给定值data去找坐标
@@ -245,11 +249,11 @@ int LinkList<T>::search(const T &data) const {
   return count == this->getLength() ? 0 : count;
 }
 template <typename T>
-int LinkList<T>::getLength() const {
+unsigned LinkList<T>::getLength() const {
   return LengthInterface::getLength();
 }
 template <typename T>
-void LinkList<T>::setLength(int length) {
+[[maybe_unused]] void LinkList<T>::setLength(unsigned length) {
   LengthInterface::setLength(length);
 }
 

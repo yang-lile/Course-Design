@@ -8,7 +8,9 @@
 #include "data_struct_interface.h"
 
 /// 接口类，提供插入元素的接口
-template <typename T>
+/// \tparam T 处理数据类型
+/// \tparam ClassT 链式操作的返回类型
+template <typename T, template <typename> class ClassT>
 class [[maybe_unused]] InsertInterface : public DataStructInterface {
  protected:
   ~InsertInterface() override = default;
@@ -18,7 +20,7 @@ class [[maybe_unused]] InsertInterface : public DataStructInterface {
   /// \param aim 插入的位置
   /// \param data 插入的元素，使用常引用来传递
   /// \return 返回该类型的引用以便于链式调用
-  [[maybe_unused]] virtual InsertInterface<T>& insert(int aim,const T& data) = 0;
+  [[maybe_unused]] virtual ClassT<T>& insert(int aim, const T& data) = 0;
 };
 
 #endif  // STORE_SYSTEM_INSERT_INTERFACE_H

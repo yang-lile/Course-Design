@@ -15,13 +15,13 @@ class LengthInterface : public DataStructInterface {
 
   ~LengthInterface() override = 0;
 
-  [[nodiscard]] virtual int getLength() const = 0;
+  [[nodiscard]] virtual unsigned getLength() const = 0;
 
-  virtual void setLength(int length) = 0;
+  virtual void setLength(unsigned length) = 0;
 
  private:
   /// 唯一的长度
-  int length_;
+  unsigned length_;
 };
 
 #endif  // STORE_SYSTEM_LENGTH_INTERFACE_H

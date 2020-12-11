@@ -15,15 +15,15 @@
 #include "remove_interface.h"
 #include "search_interface.h"
 
-template <typename T>
-class [[maybe_unused]] LinearListInterface : public CleanInterface,
-                                       public DisplayInterface,
-                                       public EmptyInterface,
-                                       public FindInterface<T>,
-                                       public InsertInterface<T>,
-                                       public LengthInterface,
-                                       public ModifyInterface<T>,
-                                       public RemoveInterface<T>,
-                                       public SearchInterface<T> {};
+template <typename T, template <typename> class ClassT>
+class LinearListInterface : public CleanInterface,
+                                             public DisplayInterface,
+                                             public EmptyInterface,
+                                             public FindInterface<T>,
+                                             public InsertInterface<T, ClassT>,
+                                             public LengthInterface,
+                                             public ModifyInterface<T, ClassT>,
+                                             public RemoveInterface<T, ClassT>,
+                                             public SearchInterface<T> {};
 
 #endif  // STORE_SYSTEM_LINEAR_LIST_INTERFACE_H
